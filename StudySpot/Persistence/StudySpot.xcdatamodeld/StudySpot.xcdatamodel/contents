@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<model type="com.apple.IDECoreDataModeler.DataModel" documentVersion="1.0" lastSavedToolsVersion="22522" systemVersion="23F79" minimumToolsVersion="Automatic" sourceLanguage="Swift" userDefinedModelVersionIdentifier="">
+    <entity name="Place" representedClassName="Place" syncable="YES" codeGenerationType="manual">
+        <attribute name="address" optional="NO" attributeType="String"/>
+        <attribute name="category" optional="NO" attributeType="String" defaultValueString="Library"/>
+        <attribute name="createdAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="isSaved" optional="NO" attributeType="Boolean" usesScalarValueType="YES" defaultValueString="NO"/>
+        <attribute name="latitude" optional="NO" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="longitude" optional="NO" attributeType="Double" defaultValueString="0.0" usesScalarValueType="YES"/>
+        <attribute name="name" optional="NO" attributeType="String"/>
+        <attribute name="noiseObservation" optional="NO" attributeType="String" defaultValueString="Unknown"/>
+        <attribute name="personalNote" optional="YES" attributeType="String"/>
+        <attribute name="powerObservation" optional="NO" attributeType="String" defaultValueString="Unknown"/>
+        <attribute name="providerId" optional="YES" attributeType="String"/>
+        <attribute name="updatedAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="wifiObservation" optional="NO" attributeType="String" defaultValueString="Unknown"/>
+        <relationship name="sessions" optional="YES" toMany="YES" deletionRule="Cascade" destinationEntity="StudySession" inverseName="place" inverseEntity="StudySession"/>
+    </entity>
+    <entity name="StudySession" representedClassName="StudySession" syncable="YES" codeGenerationType="manual">
+        <attribute name="completedAt" optional="NO" attributeType="Date" usesScalarValueType="NO"/>
+        <attribute name="durationMinutes" optional="NO" attributeType="Integer 16" defaultValueString="30" usesScalarValueType="YES"/>
+        <attribute name="focusRating" optional="NO" attributeType="Integer 16" defaultValueString="4" usesScalarValueType="YES"/>
+        <attribute name="id" optional="NO" attributeType="UUID" usesScalarValueType="NO"/>
+        <attribute name="note" optional="YES" attributeType="String"/>
+        <relationship name="place" optional="NO" maxCount="1" deletionRule="Nullify" destinationEntity="Place" inverseName="sessions" inverseEntity="Place"/>
+    </entity>
+    <elements>
+        <element name="Place" positionX="-63" positionY="-18" width="128" height="240"/>
+        <element name="StudySession" positionX="160" positionY="-18" width="128" height="135"/>
+    </elements>
+</model>
