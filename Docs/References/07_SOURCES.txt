@@ -1,0 +1,52 @@
+SOURCES AND LINKS
+Checked for this planning pack on 15 October 2026. Use current stable SDK
+documentation and the Mac tester's actual Xcode version during implementation.
+These sources inform the workflow; planned features are our design decisions.
+
+Assignment source supplied by user:
+SE4041_MADD_Assignment 2(1).pdf
+Pages 1-3: Part A; page 4: Part B; page 5: submission; pages 6-8: rubrics.
+
+Google Antigravity official download and setup:
+https://antigravity.google/download
+https://antigravity.google/docs/getting-started
+
+Git for Windows:
+https://git-scm.com/install/windows
+
+Optional GitHub Desktop:
+https://desktop.github.com/download/
+
+Apple Xcode and supported macOS requirements:
+https://developer.apple.com/xcode/
+https://developer.apple.com/xcode/system-requirements/
+
+Create an Xcode project:
+https://developer.apple.com/documentation/xcode/creating-an-xcode-project-for-an-app
+https://developer.apple.com/tutorials/develop-in-swift/create-a-project
+
+Run on simulators/devices:
+https://developer.apple.com/documentation/xcode/running-your-app-on-simulated-or-physical-devices
+
+SwiftUI:
+https://developer.apple.com/swiftui/
+
+MapKit and real place search:
+https://developer.apple.com/documentation/mapkit/mapkit-for-swiftui
+https://developer.apple.com/documentation/mapkit/mklocalsearch
+https://developer.apple.com/documentation/mapkit/interacting-with-nearby-points-of-interest
+https://developer.apple.com/videos/play/wwdc2023/10043/
+
+Core Location permission:
+https://developer.apple.com/documentation/corelocation/requesting-authorization-to-use-location-services
+
+Core Data:
+https://developer.apple.com/documentation/coredata
+
+tvOS SwiftUI and focus:
+https://developer.apple.com/videos/play/wwdc2020/10042/
+https://developer.apple.com/documentation/uikit/adding-user-focusable-elements-to-a-tvos-app
+https://developer.apple.com/design/human-interface-guidelines/designing-for-tvos
+
+Optional Swift for Windows (does not replace Apple SDK/Xcode):
+https://www.swift.org/install/windows/manual/

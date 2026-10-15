@@ -1,0 +1,91 @@
+ASSIGNMENT COVERAGE AND EVIDENCE PLAN
+Source: SE4041_MADD_Assignment 2(1).pdf, supplied by the student.
+This is a proposed implementation/evidence map, not a claim of completion.
+No grade is guaranteed by selecting a particular concept.
+
+PART A - STUDYSPOT (15% OF MODULE)
+Purpose/target: students finding and remembering suitable study locations.
+Evidence: problem statement, student needs and justification in report.
+
+Advanced UI/adaptive layouts: cards, animations, saved-list swipe actions,
+phone/tablet layout, portrait/landscape. Evidence: screenshots and live demo.
+
+SwiftUI/customization: standard controls with custom StudyPlaceCard and
+StudyStatView. Evidence: source references and explanation of reuse.
+
+Navigation/architecture: NavigationStack, simple MVVM and injected services.
+Evidence: architecture diagram/description and navigation demonstration.
+
+Persistence: related Place/StudySession Core Data entities, validated CRUD,
+fetch/filter, safe unfavourite semantics, persistent/in-memory stores.
+Evidence: entity model, restart demo, unit tests and migration explanation.
+Networking: MapKit place search and explicit loading/error/retry states.
+The brief's networking heading does not separately demand a custom backend.
+
+Advanced framework: meaningful MapKit search, markers and location-based
+discovery, with optional Core Location. The brief lists Maps among permitted
+framework choices (page 2); its detailed rubric explicitly mentions Maps.
+Explain how maps are central to the user task. A decorative static map alone
+would be a weaker integration. AI/AR is not being added for this scope.
+
+Visual design/accessibility: original identity, consistent theme, Dark Mode,
+Dynamic Type, VoiceOver, Reduce Motion and colour-independent feedback.
+Evidence: tested screenshots and accessibility test notes.
+
+Testing/performance: unit tests, UI tests, real user acceptance testing and
+measured responsiveness. Evidence: real Mac results, versions and observations.
+Do not substitute written tests for evidence that tests actually ran.
+
+Documentation: user guide, technical guide and report covering design,
+challenges, decisions, testing and reflections. Include references/AI log.
+
+Deployment/presentation: buildable app, working demo and documented setup.
+Verify the lecturer's intended deployment/demo format. No explicit App Store
+publication requirement appears in the supplied brief.
+
+Innovation: connect personal venue observations with completed study sessions
+so students can compare their own study experience across places. Treat this
+as a proposed useful distinction, not a claim of unprecedented invention.
+
+PART B - MEMORYMATCH (10% OF MODULE)
+Concept innovation (25 rubric marks): family learning through picture-word
+matching and shared turns. Research actual comparable apps and explain the
+specific difference. A generic matching board alone is a weaker pitch.
+
+Prototype functionality (25): functional game engine, two-player turns,
+both modes, two board sizes, results, persistence and rematch.
+
+UX (15): large-screen design, remote focus/select/back behaviour, legibility,
+accessible card labels and stable focus during flips/removals/navigation.
+
+Technical proficiency (15): separate engine/UI, cancellable mismatch timing,
+input locking, persistent results without duplicates, tests and performance.
+
+Pitch (20): problem, value proposition, family target market, competitor
+comparison, prototype demo, revenue hypothesis and go-to-market approach.
+Example hypothesis: optional themed learning packs; direct outreach to family
+learning communities. No payment system is needed to illustrate the pitch.
+
+SHARED SUBMISSION REQUIREMENTS (PDF PAGE 5)
+[ ] Individual work and ability to explain code/design during the viva.
+[ ] Separate GitHub repository for each project.
+[ ] Meaningful commit history and feature branches; PRs where applicable.
+[ ] Clear README with actual build/run instructions.
+[ ] Useful comments explaining non-obvious logic and design choices.
+[ ] AI-assistance record: prompts, responses and how they helped.
+[ ] Credits/references for external resources/libraries/assets.
+[ ] User/technical documents and report for Part A.
+[ ] Existing-app comparison and stakeholder pitch for Part B.
+[ ] Actual build/test evidence, known limitations and demo readiness.
+
+SCOPE CONTROL
+Keep five main screens per app. Small sheets and state changes are not separate
+main-screen commitments. No custom server, paid APIs, live venue crowd data,
+online multiplayer or inter-app synchronization is necessary for this plan.
+Core Data remains principal persistence; UserDefaults is suitable only for
+small preferences if used, not as a substitute for the required data strategy.
+
+CONFIRM OUTSIDE THIS PACK
+- Exact submission date/time: PDF gives only November 2026.
+- Lecturer's demo/deployment expectations and acceptable testing assistance.
+- Any additional course rules announced outside the provided PDF.

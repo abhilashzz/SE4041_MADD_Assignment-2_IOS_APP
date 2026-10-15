@@ -1,0 +1,92 @@
+MAC TESTER HANDOFF - STUDYSPOT AND MEMORYMATCH
+This is a task checklist, not an instruction to submit work on the student's
+behalf. Record what setup/testing assistance was provided.
+
+TOOLS
+A Mac with a compatible stable Xcode and the required iOS/tvOS Simulator
+runtimes. Use the Xcode version supported by that Mac's macOS. Download
+additional platforms/runtimes through Xcode Settings (Components/Platforms,
+depending on version). Do not require a beta Xcode for this scope.
+
+EARLY BOOTSTRAP - RECOMMENDED
+1. In Xcode create a new iOS App called StudySpot.
+   Language Swift; interface SwiftUI; choose no template persistence initially
+   if that avoids SwiftData/Core Data template conflicts. Our source adds
+   Core Data explicitly. Choose/add XCTest unit and UI test targets.
+2. Create a separate tvOS App called MemoryMatch with Swift/SwiftUI and tests.
+3. Set the chosen deployment baselines to iOS 17 and tvOS 17, or document a
+   justified change if the project/runtime requires it. Do not silently add
+   APIs newer than the selected baseline.
+4. Choose an iPhone Simulator for StudySpot, Apple TV Simulator for MemoryMatch.
+5. Build/run each empty app once. Share the schemes for repeatable testing.
+6. Return both complete source/project folders to the student using separate
+   GitHub repositories or ZIPs. Exclude DerivedData, build output and xcuserdata.
+   Keep project.pbxproj, shared schemes, assets, model files and tests.
+
+WHEN RECEIVING A WINDOWS-AUTHORED PROJECT
+1. Record repository commit ID (or exact ZIP version), macOS/Xcode version and
+   selected runtime/device. Open the supplied .xcodeproj.
+2. Confirm platform, scheme, deployment target and file target membership.
+3. Ensure only one @main app entry per app target. Check Core Data codegen is
+   consistent with explicit classes. The .xcdatamodeld must be a target resource.
+4. Choose an available Simulator destination and build/run.
+5. If a generated project is invalid, return the actual error and, if needed,
+   make a clean Xcode App template. Import source/resources, remove duplicate
+   template app/content files, add model/tests and configure Info settings.
+   Record configuration repairs and return the updated .xcodeproj to Windows.
+6. Simulator testing does not require buying an Apple Developer Program
+   membership. Physical-device signing/distribution is a separate setup using
+   an appropriate Apple account/team; do not share account passwords.
+7. Keep development-team changes local or documented. Do not send signing keys,
+   certificates or provisioning secrets in the project ZIP.
+
+STUDYSPOT VERIFICATION
+[ ] App starts on iPhone Simulator without crash.
+[ ] All five screens open; back navigation is predictable.
+[ ] Live search returns actual MapKit results when service/network permits.
+[ ] Empty results and network errors show useful states, not invented places.
+[ ] Place marker/details correspond to the selected result.
+[ ] Near Me prompts only when requested; denied permission still permits search.
+[ ] Location test uses a recorded simulated location; hardware accuracy is not
+    inferred from the Simulator. Test on an iPhone if available.
+[ ] Save twice does not create duplicates; edit personal notes/observations.
+[ ] Log/edit/delete a session; invalid duration/rating is rejected.
+[ ] Removing a saved flag preserves that place's session history.
+[ ] Close and reopen: saved places, notes and sessions remain.
+[ ] Offline saved data is readable; maps/search dependency is stated honestly.
+[ ] Dark Mode, largest practical text, landscape, VoiceOver and Reduce Motion.
+[ ] Unit tests and UI tests run; failures returned with full logs.
+
+MEMORYMATCH VERIFICATION
+[ ] App starts in Apple TV Simulator; every screen is reachable.
+[ ] Navigate with the simulator's Apple TV Remote controls, including Select
+    and Back. Test a physical Siri Remote/Apple TV if available and record it.
+[ ] Reach every board card/action without focus traps.
+[ ] Two cards of one pair award a point; active player keeps their turn.
+[ ] Mismatch flips back and switches player once, after the reveal period.
+[ ] Double select, third-card input during resolution and matched-card input
+    do not corrupt scores/state.
+[ ] Pause, Back and restart during mismatch delay do not affect a later round.
+[ ] Classic and picture-word modes both work with 6/8 pairs.
+[ ] Full game reaches correct win/draw results.
+[ ] Rematch resets board/scores and saves a finished result only once.
+[ ] Relaunch reloads local results; difficulty/mode groups are correct.
+[ ] Hidden card labels do not reveal answers through VoiceOver.
+[ ] Focus visibility, text legibility, Reduce Motion and layout are checked.
+[ ] Unit tests and UI tests run; failures returned with full logs.
+
+RETURN TO THE STUDENT
+- Exact commit/ZIP version tested.
+- Xcode and runtime versions; Simulator/device names.
+- Build success or full compiler error text (not only a cropped screenshot).
+- Test reports (.xcresult where practical), number passed/failed and failures.
+- Screenshots of each main screen and a short full-flow screen recording.
+- Steps to reproduce each issue, expected result, actual result.
+- Updated source/project configuration if any repairs were made.
+- Limitations: for example real device not tested, network unavailable, etc.
+
+FINAL PRESENTATION
+The student must be able to explain the app and its implementation. Arrange
+actual access to the required demo environment for the viva. Ask the lecturer
+whether simulator/remote/demo-video evidence meets the deployment expectation.
+This supplied brief does not explicitly require App Store publication.

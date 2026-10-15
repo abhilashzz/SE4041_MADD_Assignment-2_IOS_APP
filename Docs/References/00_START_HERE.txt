@@ -1,0 +1,104 @@
+STUDYSPOT + MEMORYMATCH: BEGINNER ANTIGRAVITY BUILD PACK
+Prepared 15 October 2026 for SE4041 MADD Assignment 02 - Swift.
+
+WHAT THIS PACK IS
+Instructions and prompts for building two native Apple apps in Antigravity.
+This pack contains no finished app, Xcode project or executed test results.
+The Windows authoring / Mac verification split is intentional.
+
+THE TWO PROJECTS
+1. StudySpot: Part A, native iOS app, five main screens.
+   Swift + SwiftUI + MapKit + Core Location + Core Data.
+2. MemoryMatch: Part B, native tvOS prototype, five main screens.
+   Swift + SwiftUI + Foundation game logic + Core Data local results.
+   Local two-player turns and optional picture-to-word learning mode.
+
+WORDS YOU NEED TO KNOW
+Swift = programming language: instructions that make the app work.
+SwiftUI = Apple's tools for drawing screens and reacting to user actions.
+Xcode = Mac software that builds and runs Apple apps.
+Antigravity = AI coding environment that helps write and revise project files.
+Framework = a ready-made Apple toolkit, such as MapKit or Core Data.
+MapKit = interactive Apple maps and place search.
+Core Data = persistent local storage: saved records survive app restarts.
+Simulator = software on the Mac that runs an iPhone or Apple TV environment.
+Repository = a project's version-controlled folder, published to GitHub.
+Build = compiling and packaging source code into an executable app.
+Target = what Xcode builds: the iOS app, tvOS app or a test bundle.
+MVVM = keeping screen code separate from screen behaviour and stored data.
+
+WINDOWS SETUP
+1. Install/open Antigravity from https://antigravity.google/download .
+2. Install Git for Windows from https://git-scm.com/install/windows .
+3. Create/sign into your GitHub account at https://github.com .
+4. Optional: GitHub Desktop provides a visual commit/push interface.
+   https://desktop.github.com/download/
+5. Create two sibling working folders, for example:
+   C:\MADD\StudySpot
+   C:\MADD\MemoryMatch
+6. Use one separate GitHub repository per app, as the brief requires.
+7. Put a copy of the assignment PDF in each workspace for Antigravity to read.
+8. Copy the matching BUILD_PROMPTS.txt file into that workspace as a reference.
+
+No paid third-party SDK, Firebase, CocoaPods, Unity or special MCP plugin is
+required by the chosen scope. Apple frameworks are supplied with Xcode.
+Installing Swift on Windows is optional for separate Foundation-only logic
+experiments; it does not supply the Apple SDKs, SwiftUI previews or iOS/tvOS
+Simulator. It is not required for the proposed source-authoring workflow.
+
+PROJECT BOOTSTRAP: DO THIS EARLY
+Recommended: have the Mac tester create two empty native Xcode App projects,
+one iOS and one tvOS, build/run each once in Simulator, then return the source
+folders through GitHub or ZIP. Instructions are in 03_MAC_HANDOFF.txt.
+Open these existing folders in Antigravity on Windows and preserve their
+Xcode project configuration as features are added.
+
+If an initial Mac visit is unavailable, the prompts instruct Antigravity to
+author complete .xcodeproj configuration with source files and shared schemes.
+This generated project is UNVERIFIED until the first Mac build. Ask the Mac
+tester to check it as soon as the first screen exists. A folder of Swift files
+or a browser mockup alone is not the final deliverable.
+
+HOW TO USE THE PROMPTS
+Start with StudySpot. Open only its project folder in Antigravity.
+Paste the COMMON CONTRACT and PHASE 0 from StudySpot/BUILD_PROMPTS.txt.
+Let the agent finish. Read its file summary and beginner explanation.
+Save its prompt and response in the AI log. Commit that milestone.
+Continue with Phase 1, then Phase 2, etc., in the SAME project conversation.
+Do not paste the entire prompt file as one request.
+Finish a first usable StudySpot build, then repeat for MemoryMatch.
+
+MAC CHECKPOINTS
+A. Skeleton: both empty apps build and open; native targets/schemes verified.
+B. Core features: StudySpot search/save and MemoryMatch full round work.
+C. Final: persistence, accessibility, focus, error cases and tests verified.
+At every checkpoint record the exact Git commit, Xcode version, runtime,
+device/simulator, result and evidence. Return original build errors as text.
+Feed those errors to Antigravity using 06_FIX_ERRORS_PROMPT.txt, then retest.
+
+WHAT WINDOWS CAN AND CANNOT CONFIRM
+Can: author source, review structure, validate text/JSON, use Git, prepare
+reports and prompts. Portable logic tests can run only if a compatible Swift
+toolchain and a separate platform-independent test package are installed.
+Cannot locally confirm: Apple-framework compilation, native layouts, signing,
+Simulator behaviour, accessibility output or Apple TV focus navigation.
+Record these as NOT RUN until the Mac tester actually runs them.
+
+SCOPE TO KEEP
+Five screens per project. Local profiles/storage. No login, payment, online
+multiplayer, backend server or phone-TV synchronization in version 1.
+StudySpot live map search requires connectivity; saved notes/history should
+remain readable without it. Offline map tiles are not promised.
+
+BEFORE SUBMISSION
+Use 04_ASSIGNMENT_COVERAGE.txt as the checklist.
+The assignment is individual: you should own the design and code decisions,
+understand the implementation and document AI assistance. Record the Mac
+helper's setup/testing contribution; follow your course's collaboration rules.
+Simulator checks help verify the apps. Confirm with the lecturer what live
+demo/deployment evidence is expected; the brief does not explicitly promise
+that a simulator-only presentation is sufficient.
+The brief says November 2026 but gives no exact day in the supplied PDF.
+
+Read 05_LOGS_AND_VIVA.txt while developing, not only at submission time.
+Official reference URLs are listed in 07_SOURCES.txt.
