@@ -119,12 +119,22 @@ public final class MockPlaceSearchService: PlaceSearchServiceProtocol {
         category: StudyPlaceCategory,
         region: MKCoordinateRegion
     ) async throws -> [PlaceDTO] {
-        isCancelled = false
-        if simulatedDelayNanoseconds > 0 {
-            try await Task.sleep(nanoseconds: simulatedDelayNanoseconds)
+        if isCancelled || Task.isCancelled {
+            isCancelled = false
+            throw SearchServiceError.cancelled
         }
         
-        if isCancelled {
+        do {
+            if simulatedDelayNanoseconds > 0 {
+                try await Task.sleep(nanoseconds: simulatedDelayNanoseconds)
+            }
+        } catch {
+            isCancelled = false
+            throw SearchServiceError.cancelled
+        }
+        
+        if isCancelled || Task.isCancelled {
+            isCancelled = false
             throw SearchServiceError.cancelled
         }
         

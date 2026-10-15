@@ -161,7 +161,7 @@ public struct ExploreView: View {
                     case .loading:
                         HStack {
                             Spacer()
-                            ProgressView("Searching study spots...")
+                            SwiftUI.ProgressView("Searching study spots...")
                                 .padding(StudySpotTheme.spacing24)
                             Spacer()
                         }

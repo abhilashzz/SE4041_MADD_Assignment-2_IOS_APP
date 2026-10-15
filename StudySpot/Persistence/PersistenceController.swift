@@ -16,11 +16,20 @@ public final class PersistenceController: ObservableObject {
     /// Dedicated demo controller so demo mode never pollutes user production database
     public static let demo = PersistenceController(isDemoStore: true)
 
+    public static let model: NSManagedObjectModel = {
+        if let url = Bundle.main.url(forResource: "StudySpot", withExtension: "momd") ??
+                     Bundle(for: PersistenceController.self).url(forResource: "StudySpot", withExtension: "momd"),
+           let m = NSManagedObjectModel(contentsOf: url) {
+            return m
+        }
+        return NSPersistentContainer(name: "StudySpot").managedObjectModel
+    }()
+
     public let container: NSPersistentContainer
     @Published public var loadError: Error?
 
     public init(inMemory: Bool = false, isDemoStore: Bool = false) {
-        container = NSPersistentContainer(name: "StudySpot")
+        container = NSPersistentContainer(name: "StudySpot", managedObjectModel: PersistenceController.model)
         
         guard let description = container.persistentStoreDescriptions.first else {
             fatalError("Failed to find persistent store description for StudySpot.")
@@ -59,7 +68,7 @@ public final class PersistenceController: ObservableObject {
     }
     
     /// Seeds initial sample data for preview or demo mode
-    public func seedSampleData(context: NSManagedContext = PersistenceController.shared.container.viewContext) {
+    public func seedSampleData(context: NSManagedObjectContext = PersistenceController.shared.container.viewContext) {
         // Only seed if empty
         let fetch: NSFetchRequest<Place> = Place.fetchRequest()
         if (try? context.count(for: fetch)) == 0 {

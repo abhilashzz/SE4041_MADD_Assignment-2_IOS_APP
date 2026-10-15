@@ -13,13 +13,21 @@ final class StoreReopeningTests: XCTestCase {
         storeURL = tempDirectory.appendingPathComponent("TestReopen.sqlite")
     }
     
+    private var openedContainers: [NSPersistentContainer] = []
+    
     override func tearDown() {
+        for container in openedContainers {
+            for store in container.persistentStoreCoordinator.persistentStores {
+                try? container.persistentStoreCoordinator.remove(store)
+            }
+        }
+        openedContainers.removeAll()
         try? FileManager.default.removeItem(at: tempDirectory)
         super.tearDown()
     }
     
     private func createTestContainer() -> NSPersistentContainer {
-        let container = NSPersistentContainer(name: "StudySpot")
+        let container = NSPersistentContainer(name: "StudySpot", managedObjectModel: PersistenceController.model)
         let desc = NSPersistentStoreDescription(url: storeURL)
         desc.setOption(true as NSNumber, forKey: NSMigratePersistentStoresAutomaticallyOption)
         desc.setOption(true as NSNumber, forKey: NSInferMappingModelAutomaticallyOption)
@@ -27,6 +35,7 @@ final class StoreReopeningTests: XCTestCase {
         container.loadPersistentStores { _, error in
             XCTAssertNil(error)
         }
+        openedContainers.append(container)
         return container
     }
     

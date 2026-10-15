@@ -89,7 +89,7 @@ public struct StudyMapView: View {
                     }) {
                         HStack(spacing: 6) {
                             if viewModel.isSearching {
-                                ProgressView()
+                                SwiftUI.ProgressView()
                                     .scaleEffect(0.8)
                             } else {
                                 Image(systemName: "arrow.clockwise")

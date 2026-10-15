@@ -203,6 +203,7 @@ public struct PlaceDetailsView: View {
                     Image(systemName: viewModel.isSaved ? "bookmark.fill" : "bookmark")
                         .foregroundColor(viewModel.isSaved ? Color.themePrimary : Color.themeMutedText)
                 }
+                .accessibilityIdentifier("detailsBookmarkButton")
                 .accessibilityLabel(viewModel.isSaved ? "Remove from saved places" : "Save place")
             }
             

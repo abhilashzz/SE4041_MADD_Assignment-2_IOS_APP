@@ -65,7 +65,7 @@ public struct HeroProgressCard: View {
             .padding(StudySpotTheme.spacing20)
         }
         .frame(height: 110)
-        .accessibilityElement(children: .combine)
+        .accessibilityElement(children: .contain)
         .accessibilityLabel("Total study time for \(period.displayName): \(timeFormatted)")
     }
 }
@@ -110,7 +110,7 @@ public struct ProgressStatCard: View {
             RoundedRectangle(cornerRadius: StudySpotTheme.cornerRadiusMedium)
                 .stroke(Color.themeSeparator.opacity(0.6), lineWidth: 1)
         )
-        .accessibilityElement(children: .combine)
+        .accessibilityElement(children: .contain)
         .accessibilityLabel("\(label): \(value)")
     }
 }

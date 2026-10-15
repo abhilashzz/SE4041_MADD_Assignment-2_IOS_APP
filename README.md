@@ -96,11 +96,24 @@ StudySpot/
     └── Info.plist                  # Location permissions configuration
 
 StudySpot.xcodeproj/                # Xcode project configuration and shared scheme
+Screenshots/                        # Live iOS Simulator screenshots (iPhone 17 Pro)
+Scripts/                            # Automated macOS verification script (verify_macos.sh)
 Tests/
 └── StudySpotTests/                 # XCTest Unit test suites
 UITests/
 └── StudySpotUITests/               # XCTest UI automation test suite
 ```
+
+---
+
+## App Screenshots
+
+The application has been verified on iOS 17+ Simulator (iPhone 17 Pro). Live runtime captures are included under the [`Screenshots/`](Screenshots/) directory, covering:
+- **Explore Screen:** Curated spots, live search, and filter chips
+- **Interactive Map:** MapKit annotations, "Near Me" location search, and venue previews
+- **Place Details:** Amenities (Wi-Fi, Power, Noise), personal notes, and Apple Maps directions handoff
+- **Saved Places:** Offline Core Data bookmarks and notes management
+- **Study Progress:** Session logging, focus ratings, and weekly visual charts
 
 ---
 

@@ -167,8 +167,12 @@ public struct SavedPlacesView: View {
             }
             .confirmationDialog(
                 "Delete Local Place Record?",
-                item: $viewModel.placeToDelete,
-                titleVisibility: .visible
+                isPresented: Binding(
+                    get: { viewModel.placeToDelete != nil },
+                    set: { if !$0 { viewModel.placeToDelete = nil } }
+                ),
+                titleVisibility: .visible,
+                presenting: viewModel.placeToDelete
             ) { place in
                 Button("Delete Place and Linked Sessions", role: .destructive) {
                     viewModel.deletePermanently(place)

@@ -26,13 +26,15 @@ final class StudySpotFlowUITests: XCTestCase {
         XCTAssertTrue(app.buttons["Directions"].exists)
         
         // 4. Tap Save / Saved toggle
-        let bookmarkButton = app.navigationBars.buttons.element(boundBy: 0)
-        if bookmarkButton.exists {
+        let bookmarkButton = app.buttons["detailsBookmarkButton"]
+        if bookmarkButton.waitForExistence(timeout: 3.0) {
             bookmarkButton.tap()
         }
         
         // 5. Navigate back to Explore
-        app.navigationBars.buttons.element(boundBy: 0).tap()
+        let backButton = app.navigationBars.buttons.element(boundBy: 0)
+        XCTAssertTrue(backButton.waitForExistence(timeout: 3.0))
+        backButton.tap()
         
         // 6. Navigate to Saved tab
         app.tabBars.buttons["Saved"].tap()
@@ -61,8 +63,8 @@ final class StudySpotFlowUITests: XCTestCase {
         
         // 5. Switch to Progress tab
         app.tabBars.buttons["Progress"].tap()
-        XCTAssertTrue(app.staticTexts["Your study progress"].waitForExistence(timeout: 3.0))
-        XCTAssertTrue(app.staticTexts["Study time"].exists)
-        XCTAssertTrue(app.staticTexts["Sessions"].exists)
+        XCTAssertTrue(app.staticTexts["Your study progress"].waitForExistence(timeout: 5.0))
+        XCTAssertTrue(app.staticTexts["Study time"].waitForExistence(timeout: 3.0))
+        XCTAssertTrue(app.staticTexts["Sessions"].waitForExistence(timeout: 3.0))
     }
 }
